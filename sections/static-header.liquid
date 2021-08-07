@@ -48,6 +48,54 @@
   .site-logo-image {
     max-height: {{ logo_height }}px;
   }
+  @media screen and (min-width: 720px) {
+    .free-shipping {
+      display: flex !important;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 35px;
+    }
+    .ship-icon img{
+      width: 42px;
+    }
+    .freeship-context {
+      padding-left: 10px;
+      padding-bottom: 5px;
+    }
+    .freeship-context .main-heading{
+      font-size: 20px;
+      font-family: FreightSansProSemiBold;
+    }
+    .freeship-context .desc{
+      font-size: 12px;
+      font-family: FreightSansProSemiBold;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .site-profile-icon {
+      display: block !important;
+      position: absolute;
+      top: 10px;
+      bottom: auto;
+      z-index: 125;
+      display: inline-block;
+      height: 46px;
+      cursor: pointer;
+      background-color: transparent;
+      border: 0;
+      right: 50px;
+    }
+    .profile-icon {
+
+    }
+    .profile-icon svg {
+      width: 100%;
+      max-width: 1.3125rem;
+      height: 100%;
+      max-height: 1.5rem;
+      color: #000;
+    }
+  }
 {% endstyle %}
 
 <div
@@ -72,6 +120,24 @@
       <span class="toggle-icon--bar toggle-icon--bar-bottom"></span>
       <span class="visually-hidden">{{ 'general.accessibility.menu' | t }}</span>
     </div>
+  </button>
+
+  <button class="site-profile-icon" style="display: none;">
+      {% if shop.customer_accounts_enabled %}
+        {% unless customer %}
+          <a href="{{ routes.account_login_url }}" class="profile-icon">
+            <span class="site-header__account-icon">
+              {% render 'icon-library', id: 'icon-account' %}
+            </span>
+          </a>
+        {% else %}
+          <a href="{{ routes.account_url }}" class="profile-icon">
+            <span class="site-header__account-icon">
+              {% render 'icon-library', id: 'icon-account' %}
+            </span>
+          </a>
+        {% endunless %}
+      {% endif %}
   </button>
 
   {% unless section.settings.show_mobile_search_bar %}
@@ -200,7 +266,22 @@
       {% endif %}
     {% endif %}
   </div>
-
+  {% if section.settings.enable_free_shipping %}
+    <div class="free-shipping" style="display: none;">
+      <div class="ship-icon">
+        {%
+          render 'rimg',
+          class: 'small-promo-custom-icon',
+          img: section.settings.image_free_ship,
+          size: '60x'
+        %}
+      </div>
+      <div class="freeship-context">
+        <div class="main-heading">{{section.settings.free_shipping_title}}</div>
+        <div class="desc">{{section.settings.free_shipping_desc}}</div>
+      </div>
+    </div>
+  {% endif %}
   <div class="site-header-right">
     {% render 'site-header-actions' %}
 
@@ -337,6 +418,12 @@
       "type": "checkbox",
       "id": "enable_live_search",
       "label": "Enable live search",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_free_shipping",
+      "label": "Enable Free Shipping",
       "default": true
     },
     {
@@ -540,6 +627,24 @@
       "id": "image",
       "label": "Image",
       "info": "50x50 recommended. Uploading an image will override any icon selected above."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_free_ship",
+      "label": "Free ship Image",
+      "info": "50x50 recommended. Uploading an image will override any icon selected above."
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_title",
+      "label": "Freeship title",
+      "default": "Free shipping"
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_desc",
+      "label": "Freeship bottom text",
+      "default": "On all orders over ₹599"
     },
     {
       "type": "header",

@@ -9,6 +9,29 @@
   }
 </script>
 
+<style>
+  @media screen and (max-width: 480px) {
+    .promo-grid--inner {
+      width: 100%;
+      display: grid;
+      grid-gap: 10px;
+      grid-row-start: span 1;
+    }
+
+    .promo-block--content {
+      min-height: 190px !important;
+      height: 190px !important;
+      padding: 1rem 1.25rem;
+      margin-top: 0px;
+    }
+
+    .promo-block--header {
+      font-size: 20px !important;
+      font-family: chaparralpro-bold;
+    }
+  }
+</style>
+
 <section class="promo-grid--container">
   {% if section.settings.title != blank %}
     <h2 class="home-section--title">
