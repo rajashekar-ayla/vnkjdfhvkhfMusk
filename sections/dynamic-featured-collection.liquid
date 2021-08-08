@@ -67,6 +67,13 @@
       {% endif %}
     }
   }
+
+  @media screen and (max-width: 480px) {
+    #shopify-section-{{ section.id }} .featured-collection__title-card {
+      background-image: url('{{ title_card_block.settings.image_mobile | img_url: '204x350', format: rimg_format }}') !important;
+    }
+  }
+  
 {% endstyle %}
 
 {% if section.settings.title != blank %}
@@ -167,6 +174,12 @@
           "id": "image",
           "label": "Image",
           "info": "500 x 750px .jpg recommended"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image For Mobile",
+          "info": "204 x 384px .jpg recommended"
         },
         {
           "type": "select",

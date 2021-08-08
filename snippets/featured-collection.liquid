@@ -35,6 +35,7 @@
   {% assign layout = 'grid' %}
 {% endif %}
 
+
 {% if title_card_source %}
   {% capture title_card %}
     <li
@@ -50,7 +51,7 @@
         {% if title_card_block.settings.image %}
           {%
             render 'rimg',
-            img: title_card_block.settings.image
+            img: title_card_block.settings.image,
             size: '500x750',
             crop: 'center',
             background: true,
