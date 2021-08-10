@@ -16366,10 +16366,39 @@ body:not(.user-is-tabbing) .shopify-model-viewer-ui .shopify-model-viewer-ui__bu
   margin-bottom: 0;
   color: {{ settings.color_headings }};
   line-height: 1.2;
+  font-family: chaparralpro-bold;
+}
+.product-tags {
+  margin-top: 10px;
+}
+.product-tags span{
+  background-color: #D6E6FF;
+  color: #2D4F84;
+  padding: 5px 10px;
+  margin-right: 5px;
+  font-family: FreightSansProSemiBold;
+  font-size: 14px;
+}
+.product-one-liner {
+  padding-top: 20px;
+  font-size: 30px;
+  font-family: 'FreightSansProSemiBold';
+}
+@media screen and (max-width: 480px) {
+  .product-one-liner {
+    padding-top: 15px;
+    font-size: 20px;
+    font-family: 'FreightSansProSemiBold';
+  }
 }
 @media screen and (min-width: 720px) {
   .product-title {
-    font-size: var(--font-size-heading-1);
+    font-size: 36px;
+    font-family: chaparralpro-bold;
+  }
+  .modal-content .product-title {
+    font-size: 28px ! important;
+    font-family: chaparralpro-bold;
   }
 }
 .product-title a {
@@ -16435,6 +16464,11 @@ body:not(.user-is-tabbing) .shopify-model-viewer-ui .shopify-model-viewer-ui__bu
 
 .product__price {
   display: inline;
+  font-size: 20px;
+  font-family: 'FreightSansProSemiBold';
+}
+
+
 }
 .product__price .price__compare-at,
 .product__price .price__current {
@@ -16553,7 +16587,10 @@ shopify-payment-terms {
 .productitem__badge--sale,
 .hotspot__badge--sale {
   color: #fff;
-  background-color: {{ settings.color_product_sale_accent }};
+  background-color: #CC6666;
+  font-size: 13px;
+  font-family: 'FreightSansProSemiBold';
+  padding: 5px 10px;
 }
 
 .form-options {
@@ -16605,9 +16642,11 @@ shopify-payment-terms {
 .product-form--atc {
   margin-top: {{ space_small | divided_by: 16.0 | append: 'rem' }};
   font-size: 0;
+  font-family: FreightSansProSemiBold;
 }
 .product-form--alt input[type=hidden] + .product-form--atc {
   margin-top: 0;
+  font-family: FreightSansProSemiBold;
 }
 
 .product-form--atc-qty,
@@ -16738,10 +16777,13 @@ shopify-payment-terms {
 .option-name {
   font-style: {{ fonts_type_body_style }};
   font-weight: {{ fonts_type_body_weight_bolder }};
+  font-family: FreightSansProSemiBold;
 }
 @media screen and (min-width: 720px) {
   .option-name {
     font-size: var(--font-size-body-smaller);
+    font-family: FreightSansProSemiBold;
+    font-size: 16px;
   }
 }
 
@@ -16767,6 +16809,9 @@ shopify-payment-terms {
   padding: {{ space_xx_small | divided_by: 16.0 | append: 'rem' }} {{ space_x_small | divided_by: 16.0 | append: 'rem' }};
   margin: 0 5px 10px 0;
   cursor: pointer;
+  border: 1px solid #2D4F84;
+  color: #2D4F84;
+  font-family: 'FreightSansProSemiBold';
   transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .option-value-input + .option-value-name.mdc-ripple-surface:after {
@@ -16774,7 +16819,7 @@ shopify-payment-terms {
 }
 @media screen and (min-width: 720px) {
   .option-value-input + .option-value-name {
-    font-size: var(--font-size-body-smaller);
+    font-size: 20px;
   }
 }
 .option-value-input:focus:not(:disabled) ~ .option-value-name:not(.option-value-swatch-wrapper) {
@@ -16785,9 +16830,13 @@ shopify-payment-terms {
   border-color: {{ color_input_border_morph_4 }};
 }
 .option-value-input:checked + .option-value-name {
-  color: {{ color_links }};
-  background-color: {{ settings.color_links | color_modify: 'alpha', 0.06 }};
-  border-color: {{ color_links }};
+  color: #fff;
+  background-color: #2D4F84;
+  border-color: #2D4F84;
+  font-family: 'FreightSansProSemiBold';
+}
+@media screen and (min-width: 720px) {
+  font-size: 20px !important;
 }
 .option-value-input:checked + .option-value-name:focus + .option-value-name:not(.option-value-swatch-wrapper) {
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
@@ -16870,7 +16919,44 @@ shopify-payment-terms {
 }
 .shopify-payment-button {
   margin-top: {{ space_small | divided_by: 16.0 | append: 'rem' }};
+  font-family: FreightSansProSemiBold;
 }
+
+@media screen and (min-width: 720px) {
+  .shopify-payment-button {
+    display: inline-block !important;
+    position: absolute !important;
+    bottom: 0px !important;
+    right: 0px !important;
+    width: 52% !important;
+    font-family: FreightSansProSemiBold;
+    font-size: 20px;
+    font-weight: normal !important;
+  }
+  .product-form--atc {
+    display: inline-block !important;
+    width: 46% !important;
+    font-family: FreightSansProSemiBold !important;
+    font-size: 20px !important;
+    font-weight: normal !important;
+  }
+  .product-form--atc-button {
+    font-family: FreightSansProSemiBold !important;
+    font-size: 18px !important;
+    border: 1px solid #2D4F84 !important;
+    color: #2D4F84 !important;
+    font-weight: normal !important;
+  }
+  .shopify-payment-button__button--unbranded {
+    font-family: FreightSansProSemiBold !important;
+    font-size: 20px !important;
+    font-weight: normal !important;
+  }
+  .product-form--regular {
+    position: relative !important;
+  }
+}
+
 .shopify-payment-button .shopify-payment-button__button {
   margin-right: auto;
   margin-left: auto;
@@ -18399,11 +18485,15 @@ a.pswp__share--download:hover {
 
 .price__compare-at {
   display: none;
-  font-size: 0.8125rem;
-  line-height: 1.38;
-  color: {{ settings.color_text_light }};
-  text-decoration: line-through;
+  font-size: 20px !important;
+  line-height: 1.38 !important;
+  color: #B7B8B8;
+  text-decoration: none;
 }
+.productgrid--item .price__compare-at {
+  font-size: 14px !important;
+}
+
 .price__compare-at.visible {
   display: inline-block;
 }
@@ -18412,6 +18502,7 @@ a.pswp__share--download:hover {
   margin-right: {{ space_xxx_small | divided_by: 16.0 | append: 'rem' }};
   font-size: var(--font-size-body);
   line-height: 1.4375rem;
+  color: #000 !important;
 }
 
 .price__current--on-sale {

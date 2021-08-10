@@ -40,6 +40,7 @@
 {% assign price = selected_variant.price %}
 {% assign sku = selected_variant.sku %}
 {% assign product_available = product.available %}
+{% assign product_tags = product.tags %}
 
 {% comment %}For a potential divider in the product.description we need to split the content{% endcomment %}
 {% assign readmore_split = product.description | split: '<!-- more -->' %}
@@ -117,6 +118,18 @@
         {% else %}
           </h1>
         {% endif %}
+      {% endif %}
+
+      <div class="product-tags">
+        {% for tag in product_tags %}
+        <span>{{tag}}</span>
+        {% endfor %}
+      </div>
+
+      {% if product.metafields.global.one_liner %}
+        <div class="product-one-liner">
+          {{ product.metafields.global.one_liner }}
+        </div>
       {% endif %}
 
       {% if settings.product_show_vendor and product.vendor != blank or onboarding %}
@@ -257,3 +270,9 @@
     {{ readmore_split[1] }}
   </div>
 {% endif %}
+
+
+<script type="text/javascript">
+  console.log("Dumping");
+  console.log({{ product | json }});
+ </script>
