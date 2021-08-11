@@ -243,6 +243,55 @@
       </div>
     </div>
 
+    
+    <div class="product-description-new">
+      {% if product.metafields.global.description %}
+        <div class="description-detail">
+          <div class="accordion active"><span>Description</span></div>
+          <div class="panel">
+            <p>{{ product.metafields.global.description }}</p>
+          </div>
+        </div>
+      {% endif %}
+      {% if product.metafields.global.steeping_instructions %}
+      <div class="description-detail">
+        <div class="accordion active"><span>Steeping instructions (100 ml)</span></div>
+        <div class="panel">
+          <div class="stteping-steps">
+            {% for steep in product.metafields.global.steeping_instructions %}
+              <div class="steep-div">
+                <div>
+                  <img src="{{ steep.icon }}"/>
+                </div>
+                <div>{{ steep.desc }}</div>
+              </div>
+            {% endfor %}
+          </div>
+          
+        </div>
+      </div>
+      {% endif %}
+      {% if product.metafields.global.product_details %}
+      <div class="description-detail">
+        <div class="accordion active"><span>Product details</span></div>
+        <div class="panel">
+          {% for product_detail in product.metafields.global.product_details %}
+            <div class="product-detail">
+              <div class="detail-key">
+                {{product_detail.key}}
+              </div>
+              <div class="detail-value">
+                {{ product_detail.value }}
+              </div>
+            </div>
+          {% endfor %}
+          
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    
+
     {% comment %}
       Product description field, never moves
     {% endcomment %}
@@ -273,6 +322,18 @@
 
 
 <script type="text/javascript">
-  console.log("Dumping");
-  console.log({{ product | json }});
+  var acc = document.getElementsByClassName("accordion");
+    var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (this.classList.length > 1){
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } else {
+        panel.style.maxHeight = 0;
+      } 
+    });
+  }
  </script>

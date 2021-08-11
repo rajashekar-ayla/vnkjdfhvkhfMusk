@@ -17066,11 +17066,166 @@ shopify-payment-terms {
   overflow: hidden;
   transition: height 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-@media screen and (min-width: 720px) {
-  .product-gallery--viewer {
-    margin-top: 0;
+.product-gallery--viewer {
+  margin-top: 0;
+}
+.product-description-new {
+  margin-top: 25px;
+  
+}
+.description-detail:nth-child(1) {
+  border-bottom: 1px solid #CBCBCB;
+  border-top: 1px solid #CBCBCB;
+}
+.description-detail:nth-child(3) {
+  margin: 0;
+  padding: 0;
+}
+.description-detail:nth-child(3) .accordion{
+  background-color: #000;
+  color: #fff;
+  padding-left: 30px;
+  border: 1px solid #000;
+}
+
+.description-detail:nth-child(3) .panel{
+  border: 1px solid #B7B8B8;
+}
+
+.description-detail:nth-child(3) .accordion:after {
+  color: #fff;
+  right: 30px;
+}
+.product-detail {
+  border-bottom: 1px solid #B7B8B8;
+  padding: 20px 30px;
+  display: flex;
+  align-items: flex-start;
+}
+.product-detail:last-child {
+  border-bottom: none
+}
+.product-detail .detail-key{
+  width: 28%;
+  font-size: 18px;
+  font-family: FreightSansProSemiBold;
+}
+.product-detail .detail-value{
+  width: 70%;
+  font-size: 18px;
+  font-family: FreightSansProMedium;
+  line-height: 1.4;
+  padding-left: 40px;
+}
+.accordion {
+  color: black;
+  cursor: pointer;
+  padding: 18px 0px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 26px;
+  font-family: FreightSansProSemiBold;
+  transition: 0.4s;
+}
+.panel {
+  font-family: FreightSansProMedium;
+  font-size: 18px;
+  line-height: 1.4;
+  max-height: initial;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion:after {
+  content: '\002B';
+  color: #000;
+  font-weight: normal;
+  float: right;
+  margin-left: 5px;
+  font-size: 30px;
+  position: relative;
+  bottom: 4px;
+}
+.description-detail .active:after {
+  content: "\2212";
+}
+.stteping-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: center;
+  padding: 20px 0px;
+}
+.stteping-steps .steep-div {
+  width: 25%;
+}
+
+.stteping-steps div {
+  font-size: 20px;
+  font-family: FreightSansProMedium;
+}
+
+.modal-content .stteping-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.modal-content .stteping-steps div {
+  font-size: 16px;
+  font-family: FreightSansProMedium;
+  padding: 10px 15px;
+}
+.modal-content .stteping-steps .steep-div {
+  width: 50%;
+}
+
+@media screen and (max-width: 480px) {
+  .stteping-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  .accordion {
+    font-size: 20px;
+  }
+  .stteping-steps div {
+    font-size: 16px;
+    font-family: FreightSansProMedium;
+    padding: 10px 15px;
+  }
+  .stteping-steps .steep-div {
+    width: 50%;
+  }
+  .product-detail {
+    border-bottom: 1px solid #B7B8B8;
+    padding: 20px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .product-detail:last-child {
+    border-bottom: none
+  }
+  .product-detail .detail-key{
+    width: 100%;
+    font-size: 18px;
+    font-family: FreightSansProSemiBold;
+  }
+  .product-detail .detail-value{
+    padding-top: 20px;
+    width: 100%;
+    font-size: 18px;
+    font-family: FreightSansProMedium;
+    line-height: 1.4;
+    padding-left: 0px;
   }
 }
+
 @media screen and (min-width: 1024px) {
   .hover-zoom-enabled .product-gallery--viewer {
     cursor: crosshair;
