@@ -30,8 +30,53 @@
       font-family: chaparralpro-bold;
     }
   }
+  @media screen and (min-width: 720px) {
+    #shopify-section-moving_carousel .promo-grid--container {
+      padding-left: 0;
+      padding-right: 0;
+      max-width: initial;
+    }
+  }
 </style>
+{% for block in section.blocks %}
+  {% style %}
+  .promo-block--{{ block.id }}.promo-block--top-center {
+    background-position: center top;
+  }
 
+  .promo-block--{{ block.id }}.promo-block--top-left {
+    background-position: left top;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--top-right {
+    background-position: right top;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--center-center {
+    background-position: center center;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--center-left {
+    background-position: left center;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--center-right {
+    background-position: right center;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--bottom-center {
+    background-position: center bottom;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--bottom-left {
+    background-position: left bottom;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--bottom-right {
+    background-position: right bottom;
+  }
+  {% endstyle %}
+{% endfor %}
 <section class="promo-grid--container">
   {% if section.settings.title != blank %}
     <h2 class="home-section--title">
@@ -65,6 +110,19 @@
     blocks: section.blocks
   %}
 </section>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $('#shopify-section-moving_carousel .promo-grid--inner').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1000,
+    });
+    
+  });
+ </script>
 
 {% schema %}
 {

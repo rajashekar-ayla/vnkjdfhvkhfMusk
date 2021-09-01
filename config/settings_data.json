@@ -348,6 +348,87 @@
           "text_alignment": "top-left"
         }
       },
+      "moving_carousel": {
+        "type": "dynamic-promo-grid",
+        "blocks": {
+          "moving_carousel_0": {
+            "type": "promotion",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/1.jpg",
+              "background_position": "center-right",
+              "title": "Blends",
+              "text": "",
+              "color": "#000000",
+              "block_link": "shopify:\/\/collections\/blends",
+              "button_text": "",
+              "button_style": "primary",
+              "show_overlay": false,
+              "background": "",
+              "opacity": 50
+            }
+          },
+          "moving_carousel_1": {
+            "type": "promotion",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/2.jpg",
+              "background_position": "center-center",
+              "title": "Single Estate",
+              "text": "",
+              "color": "#000000",
+              "block_link": "shopify:\/\/collections\/single-estate",
+              "button_text": "",
+              "button_style": "primary",
+              "show_overlay": false,
+              "background": "",
+              "opacity": 50
+            }
+          },
+          "moving_carousel_2": {
+            "type": "promotion",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/3.jpg",
+              "background_position": "center-left",
+              "title": "Tisane \/ Herbal",
+              "text": "",
+              "color": "#000000",
+              "block_link": "",
+              "button_text": "",
+              "button_style": "primary",
+              "show_overlay": false,
+              "background": "",
+              "opacity": 50
+            }
+          },
+          "moving_carousel_3": {
+            "type": "promotion",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/4.jpg",
+              "background_position": "center-left",
+              "title": "Chais",
+              "text": "",
+              "color": "#000000",
+              "block_link": "",
+              "button_text": "",
+              "button_style": "primary",
+              "show_overlay": false,
+              "background": "",
+              "opacity": 50
+            }
+          }
+        },
+        "block_order": [
+          "moving_carousel_0",
+          "moving_carousel_1",
+          "moving_carousel_2",
+          "moving_carousel_3"
+        ],
+        "settings": {
+          "title": "Testing",
+          "section_height": "medium",
+          "section_columns": 4,
+          "text_alignment": "top-left"
+        }
+      },
       "static-collection": {
         "type": "static-collection",
         "blocks": {
@@ -921,6 +1002,7 @@
       "16141154082496c2cc",
       "1614115478e7f12953",
       "1493145778308",
+      "moving_carousel",
       "1493163784784",
       "161411620981c75d5e",
       "1614191055f69adc20",

@@ -95,6 +95,8 @@
     {% comment %}Inject theme-object end{% endcomment %}
 
     {% include 'judgeme_core' %}
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 </head>
 
   <body class="template-{{ template.name }}" data-instant-allow-query-string {% if settings.reduce_animations %}data-reduce-animations{% endif %}>
@@ -424,5 +426,6 @@
       defer
     >
     </script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
   </body>
 </html>

@@ -20,6 +20,46 @@
   }
 </script>
 
+{% for block in section.blocks %}
+  {% style %}
+  .promo-block--{{ block.id }}.promo-block--top-center {
+    background-position: center top;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--top-left {
+    background-position: left top;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--top-right {
+    background-position: right top;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--center-center {
+    background-position: center center;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--center-left {
+    background-position: left center;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--center-right {
+    background-position: right center;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--bottom-center {
+    background-position: center bottom;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--bottom-left {
+    background-position: left bottom;
+  }
+
+  .promo-block--{{ block.id }}.promo-block--bottom-right {
+    background-position: right bottom;
+  }
+  {% endstyle %}
+{% endfor %}
+
 <section class="promo-mosaic--container">
   {% if section.settings.title != blank %}
     <h2 class="home-section--title">

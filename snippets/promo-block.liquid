@@ -15,44 +15,6 @@
   {{ additional_classes | strip_newlines }}
 {%- endcapture -%}
 
-{% style %}
-.promo-block--{{ block.id }}.promo-block--top-center {
-  background-position: center top;
-}
-
-.promo-block--{{ block.id }}.promo-block--top-left {
-  background-position: left top;
-}
-
-.promo-block--{{ block.id }}.promo-block--top-right {
-  background-position: right top;
-}
-
-.promo-block--{{ block.id }}.promo-block--center-center {
-  background-position: center center;
-}
-
-.promo-block--{{ block.id }}.promo-block--center-left {
-  background-position: left center;
-}
-
-.promo-block--{{ block.id }}.promo-block--center-right {
-  background-position: right center;
-}
-
-.promo-block--{{ block.id }}.promo-block--bottom-center {
-  background-position: center bottom;
-}
-
-.promo-block--{{ block.id }}.promo-block--bottom-left {
-  background-position: left bottom;
-}
-
-.promo-block--{{ block.id }}.promo-block--bottom-right {
-  background-position: right bottom;
-}
-{% endstyle %}
-
 
 <{% if block.settings.title != blank and block.settings.text != blank %}article{% else %}div{% endif %}
   class="{{ classes | replace: '  ', ' ' | strip_newlines }} {% if block.settings.image == blank %}onboarding-image{% endif %}"
