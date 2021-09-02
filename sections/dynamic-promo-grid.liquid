@@ -36,6 +36,33 @@
       padding-right: 0;
       max-width: initial;
     }
+    #shopify-section-moving_carousel .promo-block {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    #shopify-section-moving_carousel .slick-prev {
+      position: absolute;
+      top: 50%;
+      left: 4.8%;
+      transform: translate(-50%, -50%);
+    }
+    #shopify-section-moving_carousel .slick-next {
+      position: absolute;
+      top: 50%;
+      right: 40px;
+      transform: translate(-50%, -50%);
+    }
+    
+    #shopify-section-moving_carousel .slick-prev img,.slick-next img{
+      width: 40px;
+      cursor: pointer;
+    }
+    /* #shopify-section-moving_carousel .promo-block[data-rimg=loading] {
+      opacity: 1 !important;
+    } */
+    /* [data-rimg=loading] {
+      opacity: 1 !important;
+    } */
   }
 </style>
 {% for block in section.blocks %}
@@ -113,13 +140,33 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
+    if (window.matchMedia("(min-width: 769px)").matches) {
+      /* the viewport is less than 768 pixels wide */
+      $('#shopify-section-moving_carousel .promo-grid--inner').slick({
+        dots: false,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        centerMode: true,
+        initialSlide: 2,
+        prevArrow:'<span class="slick-prev"><img src="https://cdn.shopify.com/s/files/1/0540/5202/8590/files/Arrow_left.svg?v=1630600386"/></span>',
+        nextArrow:'<span class="slick-next"><img src="https://cdn.shopify.com/s/files/1/0540/5202/8590/files/Arrow_right.svg?v=1630600386"/></span>',
+        centerPadding: '120px',
+        responsive: [
+          {
+              breakpoint: 480,
+              settings: "unslick"
+          }
+          ]
+      });
+      
+    }
 
-    $('#shopify-section-moving_carousel .promo-grid--inner').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 1000,
-    });
+    setTimeout(function(){
+      $('#shopify-section-moving_carousel .promo-block').attr('data-rimg', 'loaded');
+    }, 2500);
+    
     
   });
  </script>
