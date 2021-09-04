@@ -57,12 +57,6 @@
       width: 40px;
       cursor: pointer;
     }
-    /* #shopify-section-moving_carousel .promo-block[data-rimg=loading] {
-      opacity: 1 !important;
-    } */
-    /* [data-rimg=loading] {
-      opacity: 1 !important;
-    } */
   }
 </style>
 {% for block in section.blocks %}
@@ -147,7 +141,7 @@
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 1500,
         centerMode: true,
         initialSlide: 2,
         prevArrow:'<span class="slick-prev"><img src="https://cdn.shopify.com/s/files/1/0540/5202/8590/files/Arrow_left.svg?v=1630600386"/></span>',
@@ -160,12 +154,22 @@
           }
           ]
       });
-      
-    }
 
-    setTimeout(function(){
-      $('#shopify-section-moving_carousel .promo-block').attr('data-rimg', 'loaded');
-    }, 2500);
+       setTimeout(function(){
+         var slides = $('#shopify-section-moving_carousel .promo-block');
+         for (let i = 0 ; i < slides.length; i++) {
+           if (slides[i].attributes['data-rimg']['nodeValue'] === 'loading'){
+            slides[i].attributes['data-rimg']['nodeValue'] = 'loaded';
+           } else if(slides[i].attributes['data-rimg']['nodeValue'] === 'lazy') {
+             var bgImageUrl = slides[i].childNodes[3].attributes[0].value;
+             slides[i].attributes.style.value += `background-image: url(${bgImageUrl});`;
+             slides[i].attributes['data-rimg']['nodeValue'] = 'loaded';
+           }
+         }
+
+       //  $('#shopify-section-moving_carousel .promo-block').attr('data-rimg', 'loaded');
+       }, 1000);
+    }
     
     
   });
