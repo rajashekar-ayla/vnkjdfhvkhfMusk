@@ -255,7 +255,15 @@
       {% endif %}
       {% if product.metafields.global.steeping_instructions %}
       <div class="description-detail">
-        <div class="accordion active"><span>Steeping instructions (100 ml)</span></div>
+        <div class="accordion active">
+          <span>Steeping instructions 
+            {% if product.metafields.global.steep %}
+              ({{product.metafields.global.steep}})
+            {% else %}
+              (180 ml)
+            {% endif %}
+          </span>
+        </div>
         <div class="panel">
           <div class="stteping-steps">
             {% for steep in product.metafields.global.steeping_instructions %}
