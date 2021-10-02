@@ -284,14 +284,35 @@
         <div class="accordion active"><span>Product details</span></div>
         <div class="panel">
           {% for product_detail in product.metafields.global.product_details %}
-            <div class="product-detail">
-              <div class="detail-key">
-                {{product_detail.key}}
+            {% if product_detail.key == 'Taste Rating Scale (0-5)' %}
+              <div class="product-detail">
+                <div class="detail-key">
+                  {{product_detail.key}}
+                </div>
+                <div class="detail-value">
+                  {% for taste in product_detail.value%}
+                    <div class="taste-key">{{taste[0]}}: </div>
+                    {% for i in (1..5) %}
+                      {% if i <= taste[1] %}
+                        <span class="yellow-active"></span>&nbsp;
+                      {% else %}
+                        <span></span>&nbsp;
+                      {% endif %}
+                    {% endfor %}
+                    <br/>
+                  {% endfor %}
+                </div>
               </div>
-              <div class="detail-value">
-                {{ product_detail.value }}
+            {% else %}
+              <div class="product-detail">
+                <div class="detail-key">
+                  {{product_detail.key}}
+                </div>
+                <div class="detail-value">
+                  {{ product_detail.value }}
+                </div>
               </div>
-            </div>
+            {% endif %}
           {% endfor %}
           
         </div>
