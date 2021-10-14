@@ -19896,9 +19896,48 @@ body:not(.user-is-tabbing) .surface-pick-up-embed__modal-btn:focus {
 
 .site-navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-color: {{ color_header_background }};
+  align-items: center;
 }
+
+.cg-block-mob {
+  display: block;
+  text-align: center;
+  padding: 20px;
+}
+
+.cg-block-mob .cg-btn{
+  width: 100%;
+  font-size: 16px;
+}
+
+.mobile-nav-content .cg-btn{
+  height: 40px;
+  background-color: #83B040 !important;
+  border: 1px solid #83B040 !important;
+  outline: none;
+  color: #fff !important;
+  font-size: 16px !important;
+}
+.mobile-nav-content .cg-anchor{
+  outline: none;
+  color: #fff !important;
+}
+
+.site-navigation .cg-btn{
+  height: 36px;
+  background-color: #83B040 !important;
+  border: 1px solid #83B040 !important;
+  outline: none;
+  color: #fff !important;
+  margin-left: 20px;
+}
+.site-navigation .cg-anchor{
+  outline: none;
+  color: #fff !important;
+}
+
 .site-navigation ul {
   padding: 0;
   margin: 0;
