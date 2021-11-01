@@ -131,6 +131,7 @@
             class="slideshow-pagination__button"
             data-selected="{% if forloop.index == 1 %}true{% else %}false{% endif %}"
             data-slide-button="{{ forloop.index0 }}"
+            aria-label="screen reader only label"
           >
             <span class="visually-hidden">{{ 'sections.slideshow.slide_index' | t: count: forloop.index }}</span>
           </button>

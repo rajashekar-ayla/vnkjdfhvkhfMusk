@@ -627,26 +627,44 @@ sup {
 @font-face {
   font-family: chaparralpro-bold;
   src: url(../assets/chaparralpro-bold.otf);
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
 }
 @font-face {
   font-family: chaparralpro-bold-italic;
   src: url(../assets/chaparralpro-boldit.otf);
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
 }
 @font-face {
   font-family: chaparralpro-italic;
   src: url(../assets/chaparralpro-italic.otf);
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
 }
 @font-face {
   font-family: chaparralpro-regular;
   src: url(../assets/chaparralpro-regular.otf);
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
 }
 @font-face {
   font-family: FreightSansProMedium;
   src: url(../assets/FreightSansProMedium-Regular_2.ttf);
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
 }
 @font-face {
   font-family: FreightSansProSemiBold;
   src: url(../assets/FreightSansProSemibold-Regular.ttf);
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
 }
 
 /* Embedded content
@@ -2598,7 +2616,7 @@ h4 {
 .product-reviews--content .spr-form .spr-form-label, .form-field-title--inline, .form-field-title {
   font-size: var(--font-size-body);
   line-height: 1;
-  color: {{ settings.color_input_background | color_mix: settings.color_input_text, 40 }};
+  color: #000;
 }
 
 .no-label .product-reviews--content .spr-form .spr-form-input-text, .product-reviews--content .spr-form .no-label .spr-form-input-text,
@@ -3707,6 +3725,8 @@ body .mdc-ripple-surface:hover:before {
   max-width: 100%;
   margin-right: auto;
   margin-left: auto;
+  width: 100%;
+  height: 100%;
 }
 @media screen and (min-width: 1024px) {
   .site-logo-image {
@@ -7284,6 +7304,7 @@ body .mdc-ripple-surface:hover:before {
 .highlights-banner__icon .highlights-banner__custom-icon {
   width: auto;
   height: 100%;
+  width: 100%;
 }
 
 .highlights-banner__text {
@@ -19919,6 +19940,7 @@ body:not(.user-is-tabbing) .surface-pick-up-embed__modal-btn:focus {
   outline: none;
   color: #fff !important;
   font-size: 16px !important;
+  text-transform: uppercase;
 }
 .mobile-nav-content .cg-anchor{
   outline: none;
@@ -19932,6 +19954,7 @@ body:not(.user-is-tabbing) .surface-pick-up-embed__modal-btn:focus {
   outline: none;
   color: #fff !important;
   margin-left: 20px;
+  text-transform: uppercase;
 }
 .site-navigation .cg-anchor{
   outline: none;

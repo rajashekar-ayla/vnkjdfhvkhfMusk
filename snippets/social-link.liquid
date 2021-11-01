@@ -14,7 +14,7 @@
   class="social-link"
   {% if title != blank %}title="{{ title | escape }}"{% endif %}
   href="{{ url | escape }}"
-  target="_blank">
+  target="_blank" rel="noreferrer">
   {%-
     render 'social-icon',
     id: id
