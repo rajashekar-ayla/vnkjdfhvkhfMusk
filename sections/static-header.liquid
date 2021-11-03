@@ -113,7 +113,7 @@
     data-site-header-mobile-search-button
   {% endif %}
 >
-  <button class="site-header-menu-toggle" data-menu-toggle>
+  <button class="site-header-menu-toggle" aria-label="Menu toggle" data-menu-toggle>
     <div class="site-header-menu-toggle--button" tabindex="-1">
       <span class="toggle-icon--bar toggle-icon--bar-top"></span>
       <span class="toggle-icon--bar toggle-icon--bar-middle"></span>
@@ -122,7 +122,7 @@
     </div>
   </button>
 
-  <button class="site-profile-icon" style="display: none;">
+  <button class="site-profile-icon" style="display: none;" aria-label="profile-icon">
       {% if shop.customer_accounts_enabled %}
         {% unless customer %}
           <a href="{{ routes.account_login_url }}" class="profile-icon">

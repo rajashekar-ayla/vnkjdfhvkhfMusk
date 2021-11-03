@@ -31,6 +31,19 @@
   .highlights-banner__{{- section.id }} .highlights-banner__icon {
     color: {{ section.settings.icon_color }};
   }
+  @media screen and (max-width: 480px) {
+    .sources-local-mob {
+      display: flex !important;
+      flex-wrap: initial !important;
+      justify-content: space-between !important;
+    }
+    .sources-local-mob .highlights-banner__block {
+      width: 65% !important;
+    }
+    .sources-local-mob:after {
+      background: none !important;
+    }
+  }
 </style>
 
 <script type="application/pxs-animation-mapping+json">
@@ -47,7 +60,7 @@
   {{ section.settings.section_width }}
   {% if section.settings.section_spacing %}section-spacing{% endif %}"
 >
-  <div class="highlights-banner__content highlight-banner__count-{{ section.blocks.size }}" 
+  <div class="highlights-banner__content highlight-banner__count-{{ section.blocks.size }} sources-local-mob" 
   {% if section.settings.mobile_layout == 'slider' %} data-highlights-slider {% endif %}
   >
     {% for block in section.blocks %}
